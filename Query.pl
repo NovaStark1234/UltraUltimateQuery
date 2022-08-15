@@ -16,7 +16,7 @@ $socket = new IO::Socket::INET (
     Proto      => 'udp'
 ) or die "Error in Socket Creation: $!\n";
 
-$data = "\xFE\xFD" . chr(9) . pack("c*", 0x01, 0x02, 0x03, 0x04) . "";
+$data = "\xFE\xFD" . chr(9) . pack("c*", 0x01, 0x02, 0x03, 0x04) . ""; #■²      ☺☻♥♦
 $socket->send($data);
 
 $bool = 1;
@@ -33,7 +33,7 @@ sub replace {
   return $string;
 }
 
-$data = "\xFE\xFD" . chr(0) . pack("c*", 0x01, 0x02, 0x03, 0x04) . pack("N", $redata) . pack("c*", 0x00, 0x00, 0x00, 0x00);
+$data = "\xFE\xFD" . chr(0) . pack("c*", 0x01, 0x02, 0x03, 0x04) . pack("N", $redata) . pack("c*", 0x00, 0x00, 0x00, 0x00); #■² ☺☻♥♦;Ü╔
 $socket->send($data);
 
 $bool = 1;
@@ -65,7 +65,7 @@ foreach my $val (@query) {
         if($count == 11) { @plugins = split /: /, $val; }
         if($count == 11) {
             if(!$plugins[1] eq "") {
-                print "$last (" . scalar(split("; ", $plugins[1])) . "): " . join(", ", split("; ", $plugins[1])) . "\n";
+                print "$last (" . scalar(split("; ", $plugins[1])) . "): " . join(", ", split("; ", $plugins[1])) . "\n"; #I don't know why i do this? Bruh
                 print "Software: $plugins[0]\n";
             } else {
                 print "Software: Vanilla\n";
