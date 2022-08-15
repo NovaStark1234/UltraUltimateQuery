@@ -12,7 +12,7 @@ $| = 1;
 my ($socket, $data, $redata, $bool, $result, @query, $query, @plugins, $plugins);
 
 $socket = new IO::Socket::INET (
-    PeerAddr   => 'play.thevertie.xyz:19132',
+    PeerAddr   => 'some.ip.here:port',
     Proto      => 'udp'
 ) or die "Error in Socket Creation: $!\n";
 
